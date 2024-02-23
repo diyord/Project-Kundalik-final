@@ -13,17 +13,17 @@ async def register_homework(data:HomeworkRegistrationValidator):
 
     new_student_data = data.model_dump()
 
-    checker = check_homework_db(data.email)
+    checker = check_homework_db(data.info_homework)
 
     if checker:
-        return {'message': 'Student with this email is allready exist'}
+        return {'message': 'Homework with this info is allready exist'}
     else:
         result = add_homework_db(reg_date=datetime.now(), **new_student_data)
 
         return result
 
 @homework_router.post('/edit')
-async def edit_student(data:EditHomeworkValidator):
+async def edit_homework(data: EditHomeworkValidator):
 
     change_data = data.model_dump()
 
@@ -39,24 +39,24 @@ async def get_homework(homework_id: int):
     if result:
         return {'message': result}
     else:
-        return {'message': 'Student not found('}
+        return {'message': 'homework not found('}
 
 @homework_router.get('/get-all-homework')
-async def get_all_users():
+async def get_all_homework():
 
     all_homeworks = get_all_homework_db()
 
     if all_homeworks:
         return {'message': all_homeworks}
     else:
-        return {'message': 'This student is not exist'}
+        return {'message': 'This homework is not exist'}
 
 @homework_router.delete('/delete-homework')
 async def delete_homework(homework_id: int):
 
-    del_user = delete_homework_db(homework_id)
+    del_homework = delete_homework_db(homework_id)
 
-    if del_user:
+    if del_homework:
         return {'message': 'homework successfully deleted'}
     else:
         return {'message': 'This homework is not exist'}

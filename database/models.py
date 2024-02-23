@@ -6,7 +6,7 @@ class Student(Base):
     name = Column(String)
     surname = Column(String)
     student_id = Column(Integer, primary_key=True, autoincrement=True)
-    phone_number = Column(String, unique=True)
+    phone_number = Column(Integer, unique=True)
     password = Column(Integer)
     school = Column(Integer)
     grate = Column(Integer)

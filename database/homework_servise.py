@@ -11,7 +11,7 @@ def add_homework_db(info_homework, status_homework, grade_of_homework):
         db.commit()
         return 'Successfull!'
     else:
-        return 'ERROR, ty again!'
+        return 'ERROR, try again!'
 
 def get_homework_db(homework_id):
     db = next(get_db())
@@ -47,10 +47,10 @@ def get_all_homework_db():
 
     return all_homework
 
-def check_homework_db(homework_number):
+def check_homework_db(info_homework):
     db = next(get_db())
 
-    checker = db.query(Homework).filter_by(homework_number=homework_number)
+    checker = db.query(Homework).filter_by(info_homework=info_homework)
 
     if checker:
         return checker
