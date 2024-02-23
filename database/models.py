@@ -1,8 +1,9 @@
 from sqlalchemy import Column, Integer, String
 from database import Base
 
+
 class Student(Base):
-    __tablename__ = 'Student'
+    __tablename__ = 'students'
     name = Column(String)
     surname = Column(String)
     student_id = Column(Integer, primary_key=True, autoincrement=True)
@@ -12,8 +13,9 @@ class Student(Base):
     grate = Column(Integer)
     email = Column(String)
 
+
 class Teacher(Base):
-    __tablename__ = 'Teacher'
+    __tablename__ = 'teachers'
     name = Column(String)
     surname = Column(String)
     teacher_id = Column(Integer, primary_key=True, autoincrement=True)
@@ -21,8 +23,9 @@ class Teacher(Base):
     school = Column(Integer)
     email = Column(String)
 
+
 class Homework(Base):
-    __tablename__ = 'Homework'
+    __tablename__ = 'homeworks'
     info_homework = Column(String)
     homework_id = Column(Integer, primary_key=True, autoincrement=True)
     status_homework = Column(String)

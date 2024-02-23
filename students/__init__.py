@@ -10,7 +10,8 @@ class StudentRegistrationValidator(BaseModel):
     grate: int
     email: str
 
+
 class EditStudentValidator(BaseModel):
     student_id: int
-    edit_date: str
-    new_date: str
+    edit_info: str
+    new_info: str

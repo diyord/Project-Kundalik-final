@@ -7,5 +7,5 @@ class HomeworkRegistrationValidator(BaseModel):
 
 class EditHomeworkValidator(BaseModel):
     homework_id: int
-    new_info: str
-    new_date: int
+    edit_info: str
+    new_info: int

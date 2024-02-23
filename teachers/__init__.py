@@ -9,5 +9,5 @@ class TeacherRegistrationValidator(BaseModel):
 
 class EditStudentValidator(BaseModel):
     teacher_id: int
-    edit_date: str
-    new_date: str
+    edit_info: str
+    new_info: str
